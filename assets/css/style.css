@@ -1,0 +1,330 @@
+@font-face {
+    font-family: 'Chat';
+    src: url('../fonts/ChatFavour.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(242, 231, 203);
+    padding: 10px;
+}
+
+body,
+button,
+input {
+    font-family: 'Chat', sans-serif;
+}
+
+/*header*/
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    font-size: 1.7rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+a.active {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 5rem;
+    text-align: center;
+}
+
+main {
+    margin: auto;
+    max-width: 1400px;
+    height: 90vh;
+}
+
+/* arène */
+.arene {
+    font-size: 2rem;
+}
+
+.arene form {
+    background-color: coral;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    justify-items: center;
+    align-items: center;
+    max-height: 750px;
+    height: 100%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#vide {
+    grid-column: 1/3;
+    grid-row: 1/4;
+}
+
+.resume {
+    background-color: rgb(242, 231, 203);
+    padding: 20px;
+    border-radius: 10px;
+    grid-column: 1/3;
+    color: rgb(45, 54, 42);
+}
+
+.resume p:nth-child(2){
+    color: #be2900;
+}
+
+.arene a {
+    text-decoration: none;
+    color: #000;
+}
+
+.card {
+    background-color: #000;
+    height: 450px;
+    width: 320px;
+    border: #000 solid 2px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color {
+    background-color: rgb(242, 231, 203);
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card img {
+    width: 300px;
+    display: block;
+    margin: auto;
+}
+
+.card .nb {
+    font-weight: bold;
+    font-size: 3rem;
+    color: rgb(242, 231, 203);
+    background-color: black;
+    width: fit-content;
+    padding: 10px 30px;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.card .nb:first-of-type {
+    top: 0;
+    left: 0;
+}
+
+.card .nb:last-of-type {
+    bottom: 4px;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.infos {
+    display: flex;
+    gap: 20px;
+    margin: auto 0 5px 10px;
+}
+
+.name {
+    text-align: end;
+    margin-right: 10px;
+    font-size: 2.5rem;
+}
+
+.infos span {
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 7px;
+    color: rgb(242, 231, 203);
+    text-align: center;
+    position: relative;
+}
+
+.infos img{
+    width: 30px;
+    position: absolute;
+    bottom: -5px;
+    right: -10px;
+}
+
+/* tableau */
+.liste {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background-color: rgb(148, 176, 138);
+    border: #000 solid 2px;
+    border-radius: 20px;
+    min-height: 20vh;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+table {
+    font-size: 2rem;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+caption,
+th {
+    background-color: cadetblue;
+}
+
+th {
+    border-bottom: 2px solid #000;
+}
+
+.tab-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tab-action a,
+input[type='submit'],
+.new,
+#close,
+#retour,
+.arene a {
+    font-size: 1.5rem;
+    padding: 3px 30px;
+    background-color: #eebf43;
+    border: #000 solid 2px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.tab-action a:hover,
+input[type='submit']:hover,
+#close:hover,
+#retour:hover {
+    background-color: #dab03e;
+}
+
+.new,
+.arene a {
+    margin: 20px 0;
+    background-color: #d82f00;
+    padding: 3px 20px;
+}
+
+.tab-action a,
+#retour {
+    text-decoration: none;
+    color: #000;
+}
+
+table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+/* formulaire */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.form {
+    background-color: rgb(242, 231, 203);
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 2rem;
+    border: solid 2px #000;
+}
+
+.update {
+    background-color: rgb(148, 176, 138);
+}
+
+.modal>div{
+    max-width: 1400px;
+    width: 100%;
+    margin: 100px auto;
+}
+
+.form form {
+    text-align: start;
+    padding: 20px;
+}
+
+.form-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form form div:not(.form form div:last-of-type) {
+    margin-bottom: 25px;
+}
+
+.form form input, select {
+    font-family: 'Chat', sans-serif;
+    font-size: 1.5rem;
+    padding: 5px;
+    width: 100%;
+    border: solid 2px #000;
+    border-radius: 7px;
+}
+
+.form form input[type="submit"] {
+    background-color: #d82f00;
+}
+
+.new:hover,
+.form form input[type="submit"]:hover,
+.arene a:hover {
+    background-color: #be2900;
+}
+
+#close,
+#retour {
+    margin: 0 0 30px auto;
+    display: block;
+    width: fit-content;
+}
